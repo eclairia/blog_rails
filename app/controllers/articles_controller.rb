@@ -38,13 +38,10 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
 
-    respond_to do |format|
-      if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
-        format.json { render :show, status: :created, location: @article }
-      else
-        render 'new', layout: "admin"
-      end
+    if @article.save
+      redirect_to @article, notice: 'Article was successfully created.'
+    else
+      render 'new', layout: "admin"
     end
   end
 
@@ -80,6 +77,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :text)
+      params.require(:article).permit(:title, :text, :url_picture)
     end
 end

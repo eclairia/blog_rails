@@ -21,6 +21,11 @@
     <%= form.text_area :text, id: :article_text %>
   </div>
 
+  <div class="field">
+    <%= form.label :url_picture, { class: "control-label" } %>
+    <%= form.text_field :url_picture, id: :url_picture %>
+  </div>  
+
   <div class="actions">
     <%= form.submit %>
   </div>

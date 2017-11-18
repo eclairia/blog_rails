@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   def index
     @page_title = "Articles page"
     @meta_descr = "Page admin!"
-    @articles = Article.all.paginate(page: params[:page], per_page: 5)
+    @articles = Article.all.paginate(page: params[:page], per_page: 3)
     render layout: "admin"
   end
 
@@ -28,6 +28,7 @@ class ArticlesController < ApplicationController
   def showAdmin
     @article = Article.find(params[:article_id])
     @page_title = @article.title
+    @page_descr = @article.text.truncate(120)
     render layout: "admin"
   end  
 

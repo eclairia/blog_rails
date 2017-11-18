@@ -1,19 +1,17 @@
-<p>
-	<strong>Commenter:</strong>
-	<%= comment.commenter %>
-</p>
- 
-<p>
-	<strong>Comment:</strong>
-	<%= comment.body %>
-</p>
-
-<p>
-	<%= link_to 'Edit', edit_article_comment_path(comment.article, comment) %>
-</p>
-
-<p>
-  <%= link_to 'Destroy Comment', [comment.article, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p>
+<div class="list-group">
+	<span class="list-group-item">
+		<h4 class="list-group-item-heading">Autheur : </h4>
+		<p class="list-group-item-text lead"><%= comment.commenter %></p>
+	</span>
+	<span class="list-group-item">
+		<h4 class="list-group-item-heading">Contenu : </h4>
+		<p class="list-group-item-text lead"><%= comment.body %></p>
+	</span>
+	<span class="list-group-item">
+		<%= link_to 'Edit', edit_article_comment_path(comment.article, comment), class: "btn btn-link active" %>
+		<%= link_to 'Supprimer', [comment.article, comment],
+								method: :delete,
+								data: { confirm: 'Are you sure?' },
+								class: "btn btn-link active"%>
+	</span>
+</div>

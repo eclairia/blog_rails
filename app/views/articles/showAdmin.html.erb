@@ -1,15 +1,21 @@
 <p id="notice"><%= notice %></p>
+<%= link_to 'Back', articles_path, class: "btn btn-link btn-lg active" %>
+<div class="col-md-10 col-md-offset-1">
+  <div class="jumbotron">
+    <h2 class="text-center"><%= @article.title %></h2>
+    <p><img src="<%= @article.url_picture %>" width="100%" heigth="200px"></p>
+    <p class="text-center lead"><%= @article.text %></p>
+    <br>
+  </div>
+</div>
+<div class="col-md-10 col-md-offset-1">
+  <div class="jumbotron">
+    <h3>Commentaires</h3>
 
-<p>
-  <h1><%= @article.title %></h1>
-</p>
+    <%= render @article.comments %>
+  </div>
+</div>
 
-<p>
-  <%= @article.text %>
-</p>
 
-<p><img src="<%= @article.url_picture %>" width="200px" heigth="200px"></p>
 
-<h2>Comments</h2>
-
-<%= render @article.comments %>
+<div style="margin-bottom: 10px"></div>

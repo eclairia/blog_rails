@@ -28,7 +28,6 @@ class ArticlesController < ApplicationController
   def showAdmin
     @article = Article.find(params[:article_id])
     @page_title = @article.title
-    @page_descr = @article.text.truncate(50)
     render layout: "admin"
   end  
 

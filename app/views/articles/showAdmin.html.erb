@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1><%= @article.title %></h1>
+</p>
+
+<p>
+  <%= @article.text %>
+</p>
+
+<p><img src="<%= @article.url_picture %>" width="200px" heigth="200px"></p>
+
+<h2>Comments</h2>
+
+<%= render @article.comments %>

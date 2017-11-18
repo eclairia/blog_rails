@@ -1,16 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Articles</h1>
-
+<h1>Tous les articles : </h1>
+<br>
 <% @articles.each do |article| %>
-    <div class="row">
-     <p><div class="col-md-10 col-md-offset-1">
-        <%= link_to article_path(article) do %>
-          <p><%= article.title %><p>
-        <% end %>
-        <p><%= article.text %></p>
-        <p><img src="<%= article.url_picture %>" width="200px" heigth="200px"></p>
-      </div></p>
+    <div class="col-md-10 col-md-offset-1">
+      <div class="jumbotron">
+        <p class="text-center lead"><%= article.title %><p>
+        <p><img src="<%= article.url_picture %>" width="100%" heigth="200px"></p>
+        <p class="text-center lead"><%= article.text[0, 100] %></p>
+        <br>
+        <p class="text-center"><%= link_to "En lire plus", article_path(article), class: "btn btn-info btn-lg active"%></p>
+      </div>
     </div>
 <% end %>
 

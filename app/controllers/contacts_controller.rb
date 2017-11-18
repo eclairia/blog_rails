@@ -1,12 +1,14 @@
 class ContactsController < ApplicationController
+  http_basic_authenticate_with name: "root", password: "root", only: [:index, :new, :edit, :update, :destroy]
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
   # GET /contacts
   # GET /contacts.json
   def index
     @page_title = "Contacts page"
-    @meta_descr = "Les contacts du blog ta gueule c'est magique!"
-    @contacts = Contact.all
+    @meta_descr = "Les contacts du Figaro blog!"
+    @contacts = Contact.all.paginate(page: params[:page], per_page: 10)
+    render layout: "admin"
   end
 
   # GET /contacts/1
@@ -17,10 +19,12 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   def new
     @contact = Contact.new
+    render layout: "admin"
   end
 
   # GET /contacts/1/edit
   def edit
+    render layout: "admin"
   end
 
   # POST /contacts

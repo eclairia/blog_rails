@@ -36,6 +36,7 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'simple_form', '~> 3.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -58,6 +59,7 @@ end
 
 group :production do
   gem 'pg', '~> 0.21.0'
+  gem 'simple_form', '~> 3.5'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

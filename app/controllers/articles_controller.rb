@@ -1,18 +1,19 @@
 class ArticlesController < ApplicationController
-  http_basic_authenticate_with name: "root", password: "root", only: [:index, :new, :update, :destroy]
+  http_basic_authenticate_with name: "root", password: "root", only: [:index, :showAdmin, :new, :edit, :update, :destroy]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   # GET /articles
   # GET /articles.json
   def index
     @page_title = "Articles page"
-    @meta_descr = "Les articles du blog ta gueule c'est magique!"
-    @articles = Article.all.paginate(page: params[:page], per_page: 2)
+    @meta_descr = "Page admin!"
+    @articles = Article.all.paginate(page: params[:page], per_page: 5)
     render layout: "admin"
   end
 
+
   def blog
-    @articles = Article.all.paginate(page: params[:page], per_page: 2)
+    @articles = Article.all.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /articles/1
@@ -21,6 +22,15 @@ class ArticlesController < ApplicationController
     @page_title = @article.title
     @page_descr = @article.text.truncate(120)
   end
+
+  # GET /articles/1
+  # GET /articles/1.json
+  def showAdmin
+    @article = Article.find(params[:article_id])
+    @page_title = @article.title
+    @page_descr = @article.text.truncate(120)
+    render layout: "admin"
+  end  
 
   # GET /articles/new
   def new

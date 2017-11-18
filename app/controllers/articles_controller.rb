@@ -5,14 +5,14 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @page_title = "Articles page"
-    @meta_descr = "Page admin!"
     @articles = Article.all.paginate(page: params[:page], per_page: 3)
     render layout: "admin"
   end
 
 
   def blog
+    @page_title = "Blog du Figaro"
+    @meta_descr = "Suivez les news de la semaine avec nous!"
     @articles = Article.all.paginate(page: params[:page], per_page: 5)
   end
 

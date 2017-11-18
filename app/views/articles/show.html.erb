@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
-<%= link_to 'Back', articles_blog_path, class: "btn btn-link btn-lg active" %>
 <div class="col-md-10 col-md-offset-1">
   <div class="jumbotron">
-    <h2 class="text-center"><%= @article.title %></h2>
+    <h1 class="text-center"><%= @article.title %></h1>
     <p><img src="<%= @article.url_picture %>" width="100%" heigth="200px"></p>
     <p class="text-center lead"><%= @article.text %></p>
     <br>
@@ -10,14 +9,14 @@
 </div>
 <div class="col-md-10 col-md-offset-1">
   <div class="jumbotron">
-    <h3>Commentaires</h3>
+    <h3>Commentaire</h3>
 
     <%= render @article.comments %>
-
-    <h3>Ecrire un commentaire</h3>
 
     <%= render 'comments/form_new' %>
   </div>
 </div>
+
+<%= link_to 'Back', articles_path %>
 
 <div style="margin-bottom: 10px"></div>

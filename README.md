@@ -23,3 +23,8 @@ Things you may want to cover:
 
 * ...
 # firstAppHeroku
+
+
+https://dry-refuge-94461.herokuapp.com
+
+https://git.heroku.com/dry-refuge-94461.git

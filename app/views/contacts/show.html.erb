@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<div class="list-group">
-	<span class="list-group-item">
-		<h4 class="list-group-item-heading">Nom : </h4>
-		<p class="list-group-item-text lead"><%= @contact.name %></p>
-	</span>
-  <span class="list-group-item">
-		<h4 class="list-group-item-heading">Email : </h4>
-		<p class="list-group-item-text lead"><%= @contact.email %></p>
-	</span>
-  <span class="list-group-item">
-		<h4 class="list-group-item-heading">Message : </h4>
-		<p class="list-group-item-text lead"><%= @contact.message %></p>
-	</span>
-</div>
+<p>
+  <strong>Name:</strong>
+  <%= @contact.name %>
+</p>
 
-<%= link_to 'Edit', edit_contact_path(@contact), class: "btn btn-link btn-lg active" %> |
-<%= link_to 'Back', contacts_path, class: "btn btn-link btn-lg active" %>
+<p>
+  <strong>Email:</strong>
+  <%= @contact.email %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @contact.message %>
+</p>
+
+<%= link_to 'Edit', edit_contact_path(@contact) %> |
+<%= link_to 'Back', contacts_path %>

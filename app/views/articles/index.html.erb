@@ -2,7 +2,7 @@
 
 <h1>Articles</h1>
 
-<table class="table table-stripped table-hover">
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -14,10 +14,12 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= link_to article.title, article_showAdmin_path(article), class: "btn btn-link btn-sm active" %></td>
+        <td><%= link_to article_showAdmin_path(article) do %>
+          <%= article.title %>
+        <% end %></td>
         <td><%= article.text %></td>
         <td><%= link_to 'Edit', edit_article_path(article), class: "btn btn-default btn-lg" %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-lg active" %></td>
+        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-lg" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,4 +29,4 @@
 
 <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
 
-<p><%= link_to 'Add a new article', new_article_path, class: "btn btn-primary btn-lg active" %></p>
+<p><%= link_to 'Add a new article', new_article_path, class: "btn btn-default btn-lg" %></p>

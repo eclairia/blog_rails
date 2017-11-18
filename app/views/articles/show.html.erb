@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
+
+<div class="row">
+  <%= link_to 'Back', articles_blog_path, class: "btn btn-link btn-lg active" %>
+</div>
+
 <div class="col-md-10 col-md-offset-1">
   <div class="jumbotron">
     <h1 class="text-center"><%= @article.title %></h1>
@@ -16,7 +21,5 @@
     <%= render 'comments/form_new' %>
   </div>
 </div>
-
-<%= link_to 'Back', articles_path %>
 
 <div style="margin-bottom: 10px"></div>

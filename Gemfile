@@ -75,6 +75,12 @@ end
 group :production do
   gem 'pg', '~> 0.21.0'
   gem 'simple_form', '~> 3.5'
+  # Use carrierwave for the files upload
+  gem 'carrierwave', '~> 1.0'
+  # Use mini_magick for the pictures resize
+  gem 'mini_magick'
+  # Use devise gem for user authentification
+  gem 'devise'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

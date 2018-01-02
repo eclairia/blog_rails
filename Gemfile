@@ -33,10 +33,25 @@ gem 'jbuilder', '~> 2.5'
 
 # Use bootstrap-saas for css
 gem 'bootstrap-sass'
+
 gem 'autoprefixer-rails'
+
+# Use will_paginate-bootstrap for the pagination with bootstrap
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
+
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+
+# Use simple_form for generate bootstrap form fastly
 gem 'simple_form', '~> 3.5'
+
+# Use carrierwave for the files upload
+gem 'carrierwave', '~> 1.0'
+
+# Use mini_magick for the pictures resize
+gem 'mini_magick'
+
+# Use devise gem for user authentification
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

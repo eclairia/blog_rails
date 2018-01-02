@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Articles</h1>
 
 <table class="table">
@@ -20,6 +18,9 @@
         <td><%= article.text %></td>
         <td><%= link_to 'Edit', edit_article_path(article), class: "btn btn-default btn-lg" %></td>
         <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-lg" %></td>
+        <% if !article.online %>
+          <td><%= link_to 'Publish this article', publish_article_path(article) %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

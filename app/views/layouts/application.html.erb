@@ -29,12 +29,20 @@
           <li><%= link_to 'Blog', articles_blog_path, class: 'nav-link' %></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li><%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Se connecter', new_user_session_path %></li>
+          <% end %>
           <li><%=  link_to 'Admin', articles_path %></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
   <div class="container">
+    <p class="alert-success"><%= notice %></p>
+    <p class="alert-success"><%= alert %></p>
+
     <div class="row">
       <div class="col-md-10 col-md-offset-1 col-auto">
         <%= yield %>

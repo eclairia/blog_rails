@@ -1,17 +1,27 @@
-<p id="notice"><%= notice %></p>
+<%= form_tag articles_blog_path, :method => 'get', class: 'search' do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Chercher un article" %>
+  <%= submit_tag "Rechercher" %>
+<% end %>
 
 <h1>Tous les articles : </h1>
 <br>
-<% @articles.each do |article| %>
-    <div class="col-md-10 col-md-offset-1">
-      <div class="jumbotron">
-        <p class="text-center lead"><%= article.title %><p>
-        <p><img src="<%= article.url_picture %>" width="100%" heigth="200px"></p>
-        <p class="text-center lead"><%= article.text[0, 100] %></p>
-        <br>
-        <p class="text-center"><%= link_to "En lire plus", article_path(article), class: "btn btn-info btn-lg active"%></p>
+<% if @articles %>
+  <% @articles.each do |article| %>
+      <div class="col-md-10 col-md-offset-1">
+        <div class="jumbotron">
+          <p class="text-center lead"><%= article.title %><p>
+            <% if article.image? %>
+              <p class="text-center"><img src="<%= article.image %>"></p>
+            <% end %>
+          <p class="text-center lead"><%= article.text[0, 100] %></p>
+          <p class="text-center lead"><%= article.created_at %></p>
+          <br>
+          <p class="text-center"><%= link_to "En lire plus", article_path(article), class: "btn btn-info btn-lg active"%></p>
+        </div>
       </div>
-    </div>
+  <% end %>
+<% else %>
+  <p>Il n'y a pas encore d'articles</p>
 <% end %>
 
 <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>

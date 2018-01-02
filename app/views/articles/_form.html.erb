@@ -1,7 +1,6 @@
-
-  <%= simple_form_for @article do |f| %>
-      <%= f.input :title, label: 'Titre' %>
-      <%= f.input :text, label: 'Contenu' %>
-      <%= f.input :url_picture, label: 'Image' %>
-      <%= f.button :submit %>
-  <% end %>
+<%= simple_form_for @article do |f| %>
+    <%= f.input :title, label: 'Titre' %>
+    <%= f.input :text, label: 'Contenu' %>
+    <%= f.input :image, as: :file %>
+    <%= f.button :submit %>
+<% end %>

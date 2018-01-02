@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-  http_basic_authenticate_with name: "root", password: "root", only: [:index, :new, :edit, :update, :destroy]
+  #http_basic_authenticate_with name: "root", password: "root", only: [:index, :new, :edit, :update, :destroy]
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
   # GET /contacts

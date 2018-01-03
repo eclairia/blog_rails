@@ -10,12 +10,15 @@
 
 <p><%= comment.created_at %></p>
 
-<p>
-	<%= link_to 'Edit', edit_article_comment_path(comment.article, comment) %>
-</p>
+<% if current_user %>
+<% else %>
+  <p>
+    <%= link_to 'Edit', edit_article_comment_path(comment.article, comment) %>
+  </p>
 
-<p>
-  <%= link_to 'Destroy Comment', [comment.article, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p>
+  <p>
+    <%= link_to 'Destroy Comment', [comment.article, comment],
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>

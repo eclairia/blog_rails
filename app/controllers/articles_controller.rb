@@ -4,52 +4,53 @@ class ArticlesController < ApplicationController
   before_action :set_article_admin, only: [:showAdmin]
   before_action :set_article_paginate, only: [:index]
 
-  # GET /articles
-  # GET /articles.json
+  # GET /article
+  # GET /article.json
   def index
     @page_title = "Articles page"
     @meta_descr = "Page admin!"
-    render layout: "admin"
+    @articles = Article.published(false).alpha.paginate(page: params[:page], per_page: 5).search(params[:search])
+    # render layout: "admin"
   end
 
   def blog
     @articles = Article.published(true).alpha.paginate(page: params[:page], per_page: 5).search(params[:search])
   end
 
-  # GET /articles/1
-  # GET /articles/1.json
+  # GET /article/1
+  # GET /article/1.json
   def show
       @page_descr = @article.text.truncate(120)
   end
 
-  # GET /articles/1
-  # GET /articles/1.json
+  # GET /article/1
+  # GET /article/1.json
   def showAdmin
     @page_title = @article.title
     @page_descr = @article.text.truncate(120)
-    render layout: "admin"
+    # render layout: "admin"
   end
 
-  # GET /articles/new
+  # GET /article/new
   def new
     @article = Article.new
-    render layout: "admin"
+    # render layout: "admin"
   end
 
-  # GET /articles/1/edit
+  # GET /article/1/edit
   def edit
-    render layout: "admin"
+    # render layout: "admin"
   end
 
-  # POST /articles
-  # POST /articles.json
+  # POST /article
+  # POST /article.json
   def create
     @article = Article.new(article_params)
 
     if @article.save
       render 'showAdmin', notice: 'Article was successfully created.'
     else
-      render 'new', layout: "admin"
+      # render 'new', layout: "admin"
     end
   end
 
@@ -57,12 +58,12 @@ class ArticlesController < ApplicationController
     if @article.update_attribute(:online, true)
       redirect_to articles_path, notice: 'Article was successfully published'
     else
-      render 'articles', layout: "admin", notice: 'Problem with the publication of the article, retry in a few moment pls'
+      # render 'article', layout: "admin", notice: 'Problem with the publication of the article, retry in a few moment pls'
     end
   end
 
-  # PATCH/PUT /articles/1
-  # PATCH/PUT /articles/1.json
+  # PATCH/PUT /article/1
+  # PATCH/PUT /article/1.json
   def update
     respond_to do |format|
       if @article.update(article_params)
@@ -75,8 +76,8 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # DELETE /articles/1
-  # DELETE /articles/1.json
+  # DELETE /article/1
+  # DELETE /article/1.json
   def destroy
     @article.destroy
     respond_to do |format|

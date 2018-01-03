@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'articles/blog'
   get '/about', to: 'static#index'
 
-  get 'article/publish/:id', to: 'article#publish', as: 'publish_article'
+  get 'article/publish/:id', to: 'articles#publish', as: 'publish_article'
 
   resources :contacts
   resources :articles do

@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
     @page_title = "Articles page"
     @meta_descr = "Page admin!"
     @articles = Article.published(false).alpha.paginate(page: params[:page], per_page: 5).search(params[:search])
-    # render layout: "admin"
+    render layout: "admin"
   end
 
   def blog
@@ -28,30 +28,18 @@ class ArticlesController < ApplicationController
   def showAdmin
     @page_title = @article.title
     @page_descr = @article.text.truncate(120)
-    # render layout: "admin"
+    render layout: "admin"
   end
 
   # GET /article/new
   def new
     @article = Article.new
-    # render layout: "admin"
+    render layout: "admin"
   end
 
   # GET /article/1/edit
   def edit
-    # render layout: "admin"
-  end
-
-  # POST /article
-  # POST /article.json
-  def create
-    @article = Article.new(article_params)
-
-    if @article.save
-      render 'showAdmin', notice: 'Article was successfully created.'
-    else
-      # render 'new', layout: "admin"
-    end
+    render layout: "admin"
   end
 
   def publish
@@ -59,6 +47,18 @@ class ArticlesController < ApplicationController
       redirect_to articles_path, notice: 'Article was successfully published'
     else
       # render 'article', layout: "admin", notice: 'Problem with the publication of the article, retry in a few moment pls'
+    end
+  end
+
+  def create
+    @article = Article.new(article_params)
+
+    respond_to do |format|
+      if @article.save
+        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+      else
+        format.html { render :new, layout: "admin" }
+      end
     end
   end
 
@@ -102,6 +102,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :text, :url_picture, :image)
+      params.require(:article).permit(:title, :text, :url_picture, :image, :user_id)
     end
 end

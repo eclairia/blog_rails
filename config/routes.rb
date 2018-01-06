@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   # Gestion des erreurs (404)
   if Rails.env.production?
     get '404', to: 'errors#e404'
+    get '500', to: 'errors#e500'
   end
 
 end

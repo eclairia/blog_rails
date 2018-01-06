@@ -20,6 +20,6 @@ To do:
     - Ajouter les tests fonctionnels pour les controller et les models
     - Faire un formulaire de contact avec envoi de mail
     - Possibilité de trier les articles par catégories avec un menu (possibilité de le faire en ajax)
-    - Possibilité pour un utilisateur de suivre un auteur et de recevoir ses prochains articles par mail
+    - Possibilité pour un utilisateur de suivre un auteur et de recevoir ses prochains articles publiés par mail
     - Faire du rewriting d'url
     - Rajouter la possibilité aux utilisateurs de s'inscrire via Facebook

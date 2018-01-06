@@ -1,5 +1,5 @@
-<%= simple_form_for @article do |f| %>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
+<%= simple_form_for [:admin, @article] do |f| %>
+    <%= f.hidden_field :admin_id, :value => current_admin.id %>
     <%= f.input :title, label: 'Titre' %>
     <%= f.input :text, label: 'Contenu' %>
     <%= f.input :image, as: :file %>

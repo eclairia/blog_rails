@@ -1,4 +1,4 @@
-<%= form_tag articles_blog_path, :method => 'get', class: 'search' do %>
+<%= form_tag blog_path, :method => 'get', class: 'search' do %>
   <%= text_field_tag :search, params[:search], placeholder: "Chercher un article" %>
   <%= submit_tag "Rechercher" %>
 <% end %>

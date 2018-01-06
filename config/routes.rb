@@ -1,22 +1,44 @@
 Rails.application.routes.draw do
+
+  ###########################################
+
+  # Espace utilisateur lambda
+  root 'welcome#index'
+  get 'blog', to: 'articles#blog'
+  get '/about', to: 'static#index'
+
+  get 'article/publish/:id', to: 'admin/articles#publish', as: 'publish_article'
+
   devise_for :users, controllers: {
       sessions: 'users/sessions'
   }
 
+  resources :categories
+  resources :contacts
+
+  resources :articles, only: [:blog, :show] do
+    resources :comments
+  end
+
+  ###########################################
+
+  # Espace d'administration
   devise_for :admin, controllers: {
       sessions: 'admin/sessions'
   }
 
-  resources :categories
-  root 'welcome#index'
-  get 'articles/blog'
-  get '/about', to: 'static#index'
-
-  get 'article/publish/:id', to: 'articles#publish', as: 'publish_article'
-
-  resources :contacts
-  resources :articles do
-  	resources :comments
-  	  	get 'showAdmin'
+  namespace :admin do
+    root 'articles#index'
+    resources :articles, except: [:blog, :show] do
+      get 'showAdmin'
+    end
   end
+
+  ###########################################
+
+  # Gestion des erreurs (404)
+  if Rails.env.production?
+    get '404', to: 'errors#e404'
+  end
+
 end

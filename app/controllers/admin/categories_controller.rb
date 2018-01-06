@@ -29,6 +29,7 @@ class Admin::CategoriesController < ApplicationController
         format.html { redirect_to admin_categories_path, notice: 'Category was successfully created.' }
         format.json { render :index, status: :created, location: @category }
       else
+        flash[:fail] = "The category could not be created"
         format.html { render :new }
         format.json { render json: @category.errors, status: :unprocessable_entity }
       end
@@ -43,6 +44,7 @@ class Admin::CategoriesController < ApplicationController
         format.html { redirect_to admin_categories_path, notice: 'Category was successfully updated.' }
         format.json { render :categories, status: :ok, location: @categories }
       else
+        flash[:fail] = "The category could not be updated"
         format.html { render :edit }
         format.json { render json: @category.errors, status: :unprocessable_entity }
       end
@@ -52,10 +54,14 @@ class Admin::CategoriesController < ApplicationController
   # DELETE /categories/1
   # DELETE /categories/1.json
   def destroy
-    @category.destroy
-    respond_to do |format|
-      format.html { redirect_to admin_categories_path, notice: 'Category was successfully destroyed.' }
-      format.json { head :no_content }
+    if @category.destroy
+      respond_to do |format|
+        format.html { redirect_to admin_categories_path, notice: 'Category was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      flash[:fail] = "The article could not be deleted"
+      redirect_to admin_categories_path
     end
   end
 

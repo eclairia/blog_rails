@@ -26,7 +26,8 @@ class Admin::ArticlesController < AdminController
       if @article.save
         format.html { redirect_to admin_articles_path, notice: 'Article was successfully created.' }
       else
-        format.html { render :new, layout: "admin", notice: 'The article could not be created' }
+        flash[:fail] = "The article could not be created"
+        format.html { render :new, layout: "admin" }
       end
     end
   end
@@ -44,6 +45,7 @@ class Admin::ArticlesController < AdminController
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.json { render :showAdmin, status: :ok, location: @article }
       else
+        flash[:fail] = "The article could not be updated"
         format.html { render :edit }
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
@@ -54,17 +56,22 @@ class Admin::ArticlesController < AdminController
     if @article.update_attribute(:online, true)
       redirect_to admin_articles_path, notice: 'Article was successfully published'
     else
-      render @article, layout: "admin", notice: 'Problem with the publication of the article, retry in a few moment pls'
+      flash[:fail] = "The article could not be published"
+      render @article, layout: "admin"
     end
   end
 
   # DELETE /article/1
   # DELETE /article/1.json
   def destroy
-    @article.destroy
-    respond_to do |format|
-      format.html { redirect_to admin_articles_path, notice: 'Article was successfully destroyed.' }
-      format.json { head :no_content }
+    if @article.destroy
+      respond_to do |format|
+        format.html { redirect_to admin_articles_path, notice: 'Article was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      flash[:fail] = "The article could not be deleted"
+      redirect_to admin_articles_path
     end
   end
 

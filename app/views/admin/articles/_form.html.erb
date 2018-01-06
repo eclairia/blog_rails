@@ -3,5 +3,8 @@
     <%= f.input :title, label: 'Titre' %>
     <%= f.input :text, label: 'Contenu' %>
     <%= f.input :image, as: :file %>
+    <div class="form-actions">
+      <%= f.collection_select(:category_id, Category.all, :id, :title) %>
+    </div>
     <%= f.button :submit %>
 <% end %>

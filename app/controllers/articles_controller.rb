@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
 
   def blog
     @articles = Article.published(true).alpha.paginate(page: params[:page], per_page: 5).search(params[:search])
+    @categories = Category.all
   end
 
   # GET /article/1

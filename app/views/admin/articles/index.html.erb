@@ -1,12 +1,11 @@
 <h1>Articles</h1>
 
-<%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
-
 <table class="table">
   <thead>
   <tr>
     <th>Title</th>
     <th>Text</th>
+    <th>Category</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -18,6 +17,7 @@
         <%= article.title %>
       <% end %></td>
       <td><%= article.text %></td>
+      <td><%= article.category.title %></td>
       <% if !article.online %>
         <td><%= link_to 'Edit', edit_admin_article_path(article), class: "btn btn-default btn-lg" %></td>
         <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-lg" %></td>
@@ -29,5 +29,7 @@
 </table>
 
 <br>
+
+<%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
 
 <p><%= link_to 'Add a new article', new_admin_article_path, class: "btn btn-default btn-lg" %></p>

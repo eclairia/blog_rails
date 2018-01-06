@@ -13,7 +13,6 @@ Rails.application.routes.draw do
       sessions: 'users/sessions'
   }
 
-  resources :categories
   resources :contacts
 
   resources :articles, only: [:blog, :show] do
@@ -32,6 +31,8 @@ Rails.application.routes.draw do
     resources :articles, except: [:blog, :show] do
       get 'showAdmin'
     end
+
+    resources :categories
   end
 
   ###########################################

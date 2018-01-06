@@ -9,6 +9,7 @@ class Admin::ArticlesController < AdminController
     @page_title = "Articles page"
     @meta_descr = "Page admin!"
     @articles = Article.published(false).alpha.paginate(page: params[:page], per_page: 5)
+    @categories = Category.all
     render layout: "admin"
   end
 
@@ -83,6 +84,6 @@ class Admin::ArticlesController < AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def article_params
-    params.require(:article).permit(:admin_id, :title, :text, :image)
+    params.require(:article).permit(:admin_id, :category_id, :title, :text, :image)
   end
 end

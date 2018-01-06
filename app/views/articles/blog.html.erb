@@ -14,7 +14,7 @@
               <p class="text-center"><img src="<%= article.image %>"></p>
             <% end %>
           <p class="text-center lead"><%= article.text[0, 100] %></p>
-          <p class="text-center lead"><%= article.created_at %></p>
+          <p class="text-center lead">Posted at <%= article.created_at %></p>
           <br>
           <p class="text-center"><%= link_to "En lire plus", article_path(article), class: "btn btn-info btn-lg active"%></p>
         </div>

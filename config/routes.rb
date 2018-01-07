@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   get 'blog', to: 'articles#blog'
   get '/about', to: 'static#index'
 
-  get 'article/publish/:id', to: 'admin/articles#publish', as: 'publish_article'
-
   devise_for :users, controllers: {
       sessions: 'users/sessions'
   }
@@ -31,6 +29,8 @@ Rails.application.routes.draw do
     resources :articles, except: [:blog, :show] do
       get 'showAdmin'
     end
+
+    get 'articles/publish/:id', to: 'articles#publish', as: 'publish_article'
 
     resources :categories
   end

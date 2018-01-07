@@ -20,7 +20,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <%= link_to "Welcome #{ current_admin.email }", admin_articles_path, class: 'navbar-brand' %>
+	      <%= link_to "Welcome #{ current_admin.first_name } #{ current_admin.last_name }", admin_articles_path, class: 'navbar-brand' %>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -28,7 +28,7 @@
 	      <ul class="nav navbar-nav">
 	        <li><%= link_to 'Blog', blog_path %></li>
 	        <li><%= link_to 'Articles list', admin_articles_path %></li>
-	        <li><%= link_to 'Categories list', admin_articles_path %></li>
+	        <li><%= link_to 'Categories list', admin_categories_path %></li>
 	      </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if admin_signed_in? %>

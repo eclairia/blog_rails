@@ -1,9 +1,18 @@
 class Article < ApplicationRecord
+
+  include Sluggable
+
+	###########################################
+
 	has_many :comments, dependent: :destroy
   belongs_to :admin
   belongs_to :category
 
+	###########################################
+
 	validates :title, presence: true, length: { minimum: 5 }
+
+	###########################################
 
 	scope :published, -> (online) { where(online: online) }
 

@@ -21,6 +21,11 @@ To do:
 - Ajouter les tests fonctionnels pour les controller et les models
 - Faire un formulaire de contact avec envoi de mail
 - Possibilité de trier les articles par catégories avec un menu (possibilité de le faire en ajax)
+- Faire un scroll infini des articles (AJAX)
 - Possibilité pour un utilisateur de suivre un auteur et de recevoir ses prochains articles publiés par mail
-- Faire du rewriting d'url
+- Faire du rewriting d'url (ajout un slug)
 - Rajouter la possibilité aux utilisateurs de s'inscrire via Facebook
+
+Bonnes pratiques:
+------
+- Remplacer les before_action par des services

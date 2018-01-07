@@ -42,7 +42,7 @@ class Admin::ArticlesController < AdminController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+        format.html { redirect_to admin_articles_path, notice: 'Article was successfully updated.' }
         format.json { render :showAdmin, status: :ok, location: @article }
       else
         flash[:fail] = "The article could not be updated"
@@ -91,6 +91,6 @@ class Admin::ArticlesController < AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def article_params
-    params.require(:article).permit(:admin_id, :category_id, :title, :text, :image)
+    params.require(:article).permit(:admin_id, :category_id, :title, :text, :slug, :image)
   end
 end

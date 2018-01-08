@@ -25,6 +25,9 @@ To do:
 - Possibilité pour un utilisateur de suivre un auteur et de recevoir ses prochains articles publiés par mail
 - Faire du rewriting d'url (ajout un slug)
 - Rajouter la possibilité aux utilisateurs de s'inscrire via Facebook
+- Rajouter un système de like pour les articles
+- Possibilité de partager les articles sur les comptes Twitter et Facebook de l'utilisateur
+- Rajouter un système de like pour les commentaires + laisser le choix à l'utilisateur sur le tri des des commentaires (soit les plus récents d'abord soit les plus likés d'abord)
 
 Bonnes pratiques:
 ------

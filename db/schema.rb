@@ -33,14 +33,14 @@ ActiveRecord::Schema.define(version: 20180107185050) do
 
   create_table "articles", force: :cascade do |t|
     t.integer "category_id"
-    t.integer "admin_id"
     t.string "title"
     t.text "text"
-    t.string "slug"
     t.string "image"
     t.boolean "online", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "admin_id"
+    t.string "slug"
     t.index ["category_id"], name: "index_articles_on_category_id"
   end
 

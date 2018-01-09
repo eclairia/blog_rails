@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   ###########################################
 
   # Espace d'administration
+
   devise_for :admin, controllers: {
       sessions: 'admin/sessions'
   }

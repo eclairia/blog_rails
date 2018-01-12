@@ -9,7 +9,6 @@ class Admin::ArticlesController < AdminController
     @page_title = "Articles page"
     @meta_descr = "Page admin!"
     @articles = Article.published(false).alpha.paginate(page: params[:page], per_page: 5)
-    @categories = Category.all
     render layout: "admin"
   end
 

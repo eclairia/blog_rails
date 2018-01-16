@@ -40,12 +40,8 @@
   </nav>
   <div class="container">
     <div class="form-group">
-      <% if notice %>
-        <p class="alert-success col-md-10 col-md-offset-1 col-auto"><%= notice %></p>
-      <% elsif flash[:alert]%>
-        <p class="alert-success col-md-10 col-md-offset-1 col-auto"><%= alert %></p>
-      <% elsif flash[:fail] %>
-        <p class="alert-danger col-md-10 col-md-offset-1 col-auto"><%= flash[:fail] %></p>
+      <% flash.each do |name, msg| -%>
+        <div class="alert alert-<%= name %>"><%= msg %></div>
       <% end %>
 
     <div class="row">

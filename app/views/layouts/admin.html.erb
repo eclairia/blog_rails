@@ -39,10 +39,8 @@
 	  </div><!-- /.container-fluid -->
 	</nav>
   	<div class="container">
-      <% if notice %>
-        <p class="alert-success"><%= notice %></p>
-      <% elsif alert %>
-        <p class="alert-success"><%= alert %></p>
+      <% flash.each do |name, msg| -%>
+        <div class="alert alert-<%= name %>"><%= msg %></div>
       <% end %>
 
   		<div class="row">

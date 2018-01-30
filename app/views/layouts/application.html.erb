@@ -10,55 +10,56 @@
   </head>
 
   <body>
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <%= link_to "Figaro blog", root_path, class: 'navbar-brand' %>
-      </div>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"                aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to "Figaro blog", root_path, class: 'navbar-brand' %>
+        </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><%= link_to 'Blog', blog_path, class: 'nav-link' %></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-            <li><%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to 'Se connecter', new_user_session_path %></li>
-          <% end %>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-  <div class="container">
-    <div class="form-group">
-      <% if !cookies[:cookie_eu_consented] %>
-        <%= render 'cookies_eu/consent_banner', link: "https://www.cnil.fr/fr/cookies-traceurs-que-dit-la-loi", target: "_blank" %>
-      <% end %>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'Blog', blog_path, class: 'nav-link' %></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li><%= link_to t('.sign_out_link'), destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to t('.sign_in_link'), new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+      <div class="form-group">
+        <% if !cookies[:cookie_eu_consented] %>
+          <%= render 'cookies_eu/consent_banner', link: "https://www.cnil.fr/fr/cookies-traceurs-que-dit-la-loi", target: "_blank" %>
+        <% end %>
 
-      <% if !cookies[:cnil]  %>
-        <p>Acceptez-vous les cookies?</p>
-        <%= link_to "Oui", :data => "oui", method: :get %>
-        <%= link_to "Non", :data => "non", method: :get %>
-      <% end %>
+        <% if !cookies[:cnil]  %>
+          <p><%= t('.acceptance_cookie') %></p>
+          <%= link_to t('.yes_cookie'), :data => "oui", method: :get %>
+          <%= link_to t('.no_cookie'), :data => "non", method: :get %>
+        <% end %>
 
-      <% flash.each do |name, msg| -%>
-        <div class="alert alert-<%= name %>"><%= msg %></div>
-      <% end %>
+        <% flash.each do |name, msg| -%>
+          <div class="alert alert-<%= name %>"><%= msg %></div>
+        <% end %>
 
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1 col-auto">
-        <%= yield %>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 col-auto">
+          <%= yield %>
+        </div>
       </div>
     </div>
-  </div>
-</body>
+    </div>
+  </body>
 </html>

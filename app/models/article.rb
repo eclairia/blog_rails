@@ -5,12 +5,14 @@ class Article < ApplicationRecord
 	###########################################
 
 	has_many :comments, dependent: :destroy
-  	belongs_to :admin
-  	belongs_to :category
+  belongs_to :admin
+  belongs_to :category
 
 	###########################################
 
-	validates :title, presence: true, length: { minimum: 5 }
+	validates :title, presence: true, length: { in: 20..100 }
+  validates :text, presence: true, length: { minimum: 100 }
+  validates :image, presence: true
 
 	###########################################
 

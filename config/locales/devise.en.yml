@@ -1,6 +1,6 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
-en:
+fr:
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
@@ -62,3 +62,28 @@ en:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
+  users:
+    confirmations:
+      new:
+        resend_confirmation_instructions: "Resend confirmation instructions"
+    shared:
+      links:
+        devise_login_link: "Login"
+        devise_signup_link: "Sign up"
+        devise_forgot_password_link: "Forgot your password?"
+        devise_no_reception_confirmation_instruction: "Didn't receive confirmation instructions?"
+        devise_unlock_instructions_link: "Didn't receive unlock instructions?"
+        login_omniauth_link: "Sign in with"
+    passwords:
+      new:
+        devise_reset_password_instructions: "Send me reset password instructions"
+      edit:
+        devise_change_password_link: "Change my password"
+    unlocks:
+      new:
+        devise_resend_unlock_instructions: "Resend unlock instructions"
+  activerecord:
+    attributes:
+      user:
+        password: "Password"
+        remember_me: "Remember me"

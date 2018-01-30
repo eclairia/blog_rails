@@ -12,7 +12,7 @@
 </div>
 <div class="col-md-10 col-md-offset-1">
   <div class="jumbotron">
-    <h3>Commentaire</h3>
+    <h3><%= t('.h3_comment') %></h3>
 
     <% if user_signed_in? %>
       <%= render @article.comments.alpha %>
@@ -20,7 +20,7 @@
       <%= render 'comments/form_new' %>
 
     <% else %>
-      <p>Veuillez vous connecter pour pouvoir poster un commentaire.</p>
+      <p><%= t('.message_comment_login') %></p>
     <% end %>
   </div>
 </div>

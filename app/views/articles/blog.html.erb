@@ -1,9 +1,9 @@
 <%= form_tag blog_path, :method => 'get', class: 'search' do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Chercher un article" %>
-  <%= submit_tag "Rechercher" %>
+  <%= text_field_tag :search, params[:search], placeholder: t('.search_article') %>
+  <%= submit_tag t('.search_button_article') %>
 <% end %>
 
-<h1>Tous les articles : </h1>
+<h1><%= t('.title_articles') %></h1>
 <br>
 <% if @articles %>
   <% @articles.each do |article| %>
@@ -14,14 +14,14 @@
               <p class="text-center"><img src="<%= article.image %>"></p>
             <% end %>
           <p class="text-center lead"><%= article.text[0, 100] %></p>
-          <p class="text-center lead">Posted at <%= article.created_at %></p>
+          <p class="text-center lead"><%= t('.posted_at') %> <%= article.created_at %></p>
           <br>
-          <p class="text-center"><%= link_to "En lire plus", article_path(article), class: "btn btn-info btn-lg active"%></p>
+          <p class="text-center"><%= link_to t('.read_more_article'), article_path(article), class: "btn btn-info btn-lg active"%></p>
         </div>
       </div>
   <% end %>
 <% else %>
-  <p>Il n'y a pas encore d'articles</p>
+  <p><%= t('.no_articles') %></p>
 <% end %>
 
 <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>

@@ -3,3 +3,35 @@ fr:
     cookies_text: "Les cookies assurent le bon fonctionnement de nos services. En utilisant ces derniers, vous acceptez l'utilisation des cookies."
     learn_more: "En savoir plus"
     ok: "OK"
+  welcome:
+    index:
+      h1_welcome: "Bienvenue"
+      h2_welcome: "Sur le Figaro blog"
+      see_blog_link: "Voir le blog"
+  layouts:
+    application:
+      sign_in_link: "Se connecter"
+      sign_out_link: "Se déconnecter"
+      acceptance_cookie: "Acceptez-vous les cookies?"
+      yes_cookie: "Oui"
+      no_cookie: "Non"
+  articles:
+    blog:
+      title_articles: "Tous les articles"
+      posted_at: "Posté le"
+      read_more_article: "En lire plus"
+      search_article: "Chercher un article"
+      search_button_article: "Rechercher"
+      no_articles: "Il n'y a pas encore d'articles"
+    show:
+      h3_comment: "Commentaires"
+      message_comment_login: "Veuillez vous connecter pour pouvoir poster un commentaire."
+  comments:
+    comment:
+      author_comment: "Auteur"
+      body_comment: "Commentaire"
+      edit_comment_link: "Modifier le commentaire"
+      destroy_comment_link: "Supprimer le commentaire"
+      confirm_destroy_comment: "Etes vous sûr?"
+    form_new:
+      submit_new_comment: "Créer un commentaire"

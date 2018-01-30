@@ -1,10 +1,10 @@
 <p>
-	<strong>Author:</strong>
+	<strong><%= t('.author_comment') %></strong>
 	<%= comment.commenter %>
 </p>
  
 <p>
-	<strong>Comment:</strong>
+	<strong><%= t('.body_comment') %></strong>
 	<%= comment.body %>
 </p>
 
@@ -13,12 +13,12 @@
 <% if current_user %>
 <% else %>
   <p>
-    <%= link_to 'Edit', edit_article_comment_path(comment.article, comment) %>
+    <%= link_to t('.edit_comment_link'), edit_article_comment_path(comment.article, comment) %>
   </p>
 
   <p>
-    <%= link_to 'Destroy Comment', [comment.article, comment],
+    <%= link_to t('.destroy_comment_link'), [comment.article, comment],
                 method: :delete,
-                data: { confirm: 'Are you sure?' } %>
+                data: { confirm: t('.confirm_destroy_comment') } %>
   </p>
 <% end %>

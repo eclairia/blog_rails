@@ -1,4 +1,24 @@
 fr:
+  fail_access_page: "Vous n'avez pas accés à cette page"
+
+  cnil_success_message: "Merci pour votre confiance!"
+
+  admin_create_article_sucess_message: "L'article a été crée avec succés"
+  admin_create_article_fail_message: "L'article n'a pas pu être créé"
+  admin_update_article_sucess_message: "L'article a été modifié avec succés"
+  admin_update_article_fail_message: "L'article n'a pas pu être modifié"
+  admin_publish_article_sucess_message: "L'article a été publié avec succés"
+  admin_publish_article_fail_message: "L'article n'a pas pu être publié"
+  admin_destroy_article_sucess_message: "L'article a été supprimé avec succés"
+  admin_destroy_article_fail_message: "L'article n'a pas pu être supprimé"
+
+  admin_create_category_sucess_message: "La catégorie a été créée avec succés"
+  admin_create_category_fail_message: "La catégorie n'a pas pu être créée"
+  admin_update_category_sucess_message: "La catégorie a été modifée avec succés"
+  admin_update_category_fail_message: "La catégorie n'a pas pu être modifiée"
+  admin_destroy_category_success_message: "La catégorie a été supprimée avec succés"
+  admin_destroy_category_fail_message: "La catégorie n'a pas pu être supprimée"
+
   cookies_eu:
     cookies_text: "Les cookies assurent le bon fonctionnement de nos services. En utilisant ces derniers, vous acceptez l'utilisation des cookies."
     learn_more: "En savoir plus"
@@ -8,13 +28,6 @@ fr:
       h1_welcome: "Bienvenue"
       h2_welcome: "Sur le Figaro blog"
       see_blog_link: "Voir le blog"
-  layouts:
-    application:
-      sign_in_link: "Se connecter"
-      sign_out_link: "Se déconnecter"
-      acceptance_cookie: "Acceptez-vous les cookies?"
-      yes_cookie: "Oui"
-      no_cookie: "Non"
   articles:
     blog:
       title_articles: "Tous les articles"
@@ -35,3 +48,109 @@ fr:
       confirm_destroy_comment: "Etes vous sûr?"
     form_new:
       submit_new_comment: "Créer un commentaire"
+  users:
+    registrations:
+      new:
+        devise_h2_sign_up: "S'inscrire"
+        devise_sign_up_submit: "S'inscrire"
+    unlocks:
+      new:
+        devise_resend_unlock_instructions: "Renvoyer les instructions de dévérouillage"
+  admin:
+    articles:
+      index:
+        admin_th_title: "Titre"
+        admin_th_text: "Texte"
+        admin_th_slug: "Slug"
+        admin_th_category: "Categorie"
+        admin_edit_article_link: "Modifier"
+        admin_destroy_article_link: "Supprimer"
+        admin_destroy_confirm_articles: "Etes vous sûr?"
+        admin_publish_article_link: "Publier cet article"
+        admin_add_article_link: "Ajouter un nouvel article"
+      form:
+        admin_simple_form_create_article_submit: "Créer l'article"
+        admin_simple_form_update_article_submit: "Modifier l'article"
+      new:
+        admin_h1_new_article: "Créer un article"
+      edit:
+        admin_h1_edit_article: "Editer l'article"
+      showAdmin:
+        show_admin_h2_comment: "Commentaires"
+    categories:
+      index:
+        admin_th_title: "Titre"
+        admin_add_category_link: "Ajouter une catégorie"
+        admin_edit_category_link: "Modifier"
+        admin_destroy_category_link: "Supprimer"
+        admin_destroy_confirm_categories: "Etes vous sûr?"
+      form:
+        admin_simple_form_create_category_submit: "Créer la catégorie"
+        admin_simple_form_update_category_submit: "Modifier la catégorie"
+      new:
+        admin_h1_new_category: "Créer une catégorie"
+      edit:
+        admin_h1_edit_category: "Modifier la categorie"
+  layouts:
+    application:
+      devise_sign_in_link: "Se connecter"
+      devise_sign_out_link: "Se déconnecter"
+      acceptance_cookie: "Acceptez-vous les cookies?"
+      yes_cookie: "Oui"
+      no_cookie: "Non"
+    admin:
+      admin_no_title: "Pas de titre"
+      admin_menu_articles_list: "Liste des articles"
+      admin_menu_categories_list: "Liste des catégories"
+      devise_admin_logout: "Se déconnecter"
+  activerecord:
+    models:
+      admin: "Admin"
+      article: "Article"
+      category: "Catégorie"
+      comment: "Commentaire"
+      contact: "Contact"
+      user: "Utilisateur"
+    attributes:
+      user:
+        email: "Email"
+        pseudo: "Pseudo"
+        password: "Mot de passe"
+      article:
+        title: "Titre"
+        text: "Contenu"
+        image: "Image"
+      category:
+        title: "Titre"
+      comment:
+        commenter: "Auteur"
+        body: "Contenu"
+    errors:
+      models:
+        article:
+          attributes:
+            title:
+              blank: "Vous devez insérer un titre"
+              taken: "Un article avec le même titre existe déjà. Veuillez en choisir un autre s'il vous plaît"
+              too_short: "Il faut au minimum %{count} caractères"
+              too_long: "Le nombre maximum de caractères est de %{count}"
+            slug:
+              taken: "Un article avec le même slug existe déjà. Veuillez en choisir un autre s'il vous plaît"
+            text:
+              blank: "Vous devez insérer un contenu"
+              too_short: "Il faut au minimum %{count} caractères"
+            image:
+              blank: "Vous devez insérer une image"
+        category:
+          attributes:
+            title:
+              blank: "Vous devez insérer un titre"
+              too_short: "Il faut au minimum %{count} caractères"
+              too_long: "Le nombre maximum de caractères est de %{count} caractères"
+              taken: "Cette catégorie existe déjà"
+        comment:
+          attributes:
+            commenter:
+              blank: "Vous devez insérer un auteur"
+            body:
+              blank: "Vous devez insérer un contenu"

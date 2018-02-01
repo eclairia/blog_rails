@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= @page_title || "No title defined" %></title>
+    <title><%= @page_title || t('.admin_no_title') %></title>
     <meta name="description" content="<%= @page_descr %>">
     <%= csrf_meta_tags %>
 
@@ -27,12 +27,12 @@
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
 	        <li><%= link_to 'Blog', blog_path %></li>
-	        <li><%= link_to 'Articles list', admin_articles_path %></li>
-	        <li><%= link_to 'Categories list', admin_categories_path %></li>
+	        <li><%= link_to t('.admin_menu_articles_list'), admin_articles_path %></li>
+	        <li><%= link_to t('.admin_menu_categories_list'), admin_categories_path %></li>
 	      </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if admin_signed_in? %>
-            <li><%= link_to 'Se déconnecter', destroy_admin_session_path, method: :delete %></li>
+            <li><%= link_to t('.devise_admin_logout'), destroy_admin_session_path, method: :delete %></li>
           <% end %>
         </ul>
 	    </div><!-- /.navbar-collapse -->

@@ -10,7 +10,7 @@ class Article < ApplicationRecord
 
 	###########################################
 
-	validates :title, presence: true, length: { in: 20..100 }
+	validates :title, presence: true, length: { in: 7..100 }, uniqueness: true
   validates :text, presence: true, length: { minimum: 100 }
   validates :image, presence: true
 

@@ -1,9 +1,9 @@
-en:
+fr:
   simple_form:
-    "yes": 'Yes'
-    "no": 'No'
+    "yes": 'Oui'
+    "no": 'Non'
     required:
-      text: 'required'
+      text: 'Requis'
       mark: '*'
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
@@ -12,11 +12,13 @@ en:
 #      default_message: "Please review the problems below:"
     labels:
       defaults:
-        password_confirmation: "Password confirmation"
+        password_confirmation: "Mot de passe de confirmation"
       articles:
-        title: "Title"
-        text: "Content"
+        title: "Titre"
+        text: "Contenu"
         slug: "Slug"
-        image: "Picture"
+        image: "Image"
       categories:
-        title: "Title"
+        title: "Titre"
+
+

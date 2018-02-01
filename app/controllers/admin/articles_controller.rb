@@ -23,9 +23,9 @@ class Admin::ArticlesController < AdminController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to admin_articles_path, success: "Article was successfully created." }
+        format.html { redirect_to admin_articles_path, success: t(:admin_create_article_sucess_message) }
       else
-        format.html { render :new, layout: "admin", danger: "The article could not be created" }
+        format.html { render :new, layout: "admin", danger: t(:admin_create_article_fail_message) }
       end
     end
   end
@@ -40,10 +40,10 @@ class Admin::ArticlesController < AdminController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to admin_articles_path, success: "Article was successfully updated." }
+        format.html { redirect_to admin_articles_path, success: t(:admin_update_article_sucess_message) }
         format.json { render :showAdmin, status: :ok, location: @article }
       else
-        format.html { render :edit, danger: "The article could not be updated" }
+        format.html { render :edit, danger: t(:admin_update_article_fail_message) }
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
@@ -51,9 +51,9 @@ class Admin::ArticlesController < AdminController
 
   def publish
     if @article.update_attribute(:online, true)
-      redirect_to admin_articles_path, success: "Article was successfully published"
+      redirect_to admin_articles_path, success: t(:admin_publish_article_sucess_message)
     else
-      format.html { render @article, layout: "admin", danger: "The article could not be published" }
+      format.html { render @article, layout: "admin", danger: t(:admin_publish_article_fail_message) }
     end
   end
 
@@ -62,11 +62,11 @@ class Admin::ArticlesController < AdminController
   def destroy
     if @article.destroy
       respond_to do |format|
-        format.html { redirect_to admin_articles_path, success: "Article was successfully destroyed." }
+        format.html { redirect_to admin_articles_path, success: t(:admin_destroy_article_sucess_message) }
         format.json { head :no_content }
       end
     else
-      redirect_to admin_articles_path, danger: "The article could not be deleted"
+      redirect_to admin_articles_path, danger: t(:admin_destroy_article_fail_message)
     end
   end
 

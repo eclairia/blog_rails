@@ -4,6 +4,7 @@ fr:
       confirmed: "Votre compte a été validé."
       send_instructions: "Vous allez recevoir les instructions nécessaires à la confirmation de votre compte dans quelques minutes."
       send_paranoid_instructions: "Si votre e-mail existe dans notre base de données, vous allez bientôt recevoir un e-mail contenant les instructions de confirmation de votre compte."
+      devise_resend_confirmation_instructions: "Renvoyer les instructions de confirmation"
     failure:
       already_authenticated: "Vous êtes déjà connecté"
       inactive: "Votre compte n'est pas encore activé."
@@ -41,8 +42,8 @@ fr:
       update_needs_confirmation: "Votre compte a bien été mis à jour mais nous devons vérifier votre nouvelle adresse email. Merci de vérifier vos emails et de cliquer sur le lien de confirmation pour finaliser la validation de votre nouvelle adresse."
       updated: "Votre compte a été modifié avec succès."
     sessions:
-      signed_in: "Connecté."
-      signed_out: "Déconnecté."
+      signed_in: "Vous êtes bien connecté."
+      signed_out: "Vous êtes bien déconnecté. A bientôt!"
       already_signed_out: "Déconnecté."
     unlocks:
       send_instructions: "Vous allez recevoir les instructions nécessaires au déverrouillage de votre compte dans quelques instants"
@@ -77,9 +78,17 @@ fr:
           devise_change_password_link: "Changer mon mot de passe"
     unlocks:
       new:
-        devise_resend_unlock_instructions: "Renvoyer les instructions de dévérouillage"
+        devise_resend_unlock_instructions: "Renvoyser les instructions de dévérouillage"
+  admin:
+    sessions:
+      new:
+        devise_admin_login_h2: "Se connecter"
+        devise_admin_submit: "Se  connecter"
   activerecord:
     attributes:
       user:
+        password: "Mot de passe"
+        remember_me: "Se souvenir de moi"
+      admin:
         password: "Mot de passe"
         remember_me: "Se souvenir de moi"

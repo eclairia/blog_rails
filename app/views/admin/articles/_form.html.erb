@@ -1,11 +1,11 @@
 <%= simple_form_for [:admin, @article] do |f| %>
     <%= f.hidden_field :admin_id, :value => current_admin.id %>
-    <%= f.input :title, label: 'Title' %>
-    <%= f.input :text, label: 'Content' %>
-    <%= f.input :slug, label: 'Slug' %>
+    <%= f.input :title %>
+    <%= f.input :text %>
+    <%= f.hidden_field :slug %>
     <%= f.input :image, as: :file %>
     <div class="form-group">
       <%= collection_select(:article, :category_id, Category.all, :id, :title) %>
     </div>
-    <%= f.button :submit %>
+    <%= f.button :submit, value: "#{f.object.new_record? ? t('.admin_simple_form_create_article_submit') : t('.admin_simple_form_update_article_submit')}" %>
 <% end %>

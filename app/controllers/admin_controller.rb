@@ -5,7 +5,7 @@ class AdminController < ApplicationController
 
   def require_admin
     unless current_admin
-      redirect_to root_path, danger: "You don't have access to this page"
+      redirect_to root_path, danger: t(:fail_access_page)
     end
   end
 end

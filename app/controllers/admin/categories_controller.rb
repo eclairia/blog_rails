@@ -26,11 +26,10 @@ class Admin::CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to admin_categories_path, notice: 'Category was successfully created.' }
+        format.html { redirect_to admin_categories_path,success: t(:admin_create_category_sucess_message) }
         format.json { render :index, status: :created, location: @category }
       else
-        flash[:fail] = "The category could not be created"
-        format.html { render :new }
+        format.html { render :new, layout: "admin", danger: t(:admin_create_category_fail_message) }
         format.json { render json: @category.errors, status: :unprocessable_entity }
       end
     end
@@ -41,11 +40,10 @@ class Admin::CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to admin_categories_path, notice: 'Category was successfully updated.' }
+        format.html { redirect_to admin_categories_path, success: t(:admin_update_category_sucess_message) }
         format.json { render :categories, status: :ok, location: @categories }
       else
-        flash[:fail] = "The category could not be updated"
-        format.html { render :edit }
+        format.html { render :edit, layout: "admin", danger: t(:admin_update_category_fail_message) }
         format.json { render json: @category.errors, status: :unprocessable_entity }
       end
     end
@@ -56,12 +54,11 @@ class Admin::CategoriesController < ApplicationController
   def destroy
     if @category.destroy
       respond_to do |format|
-        format.html { redirect_to admin_categories_path, notice: 'Category was successfully destroyed.' }
+        format.html { redirect_to admin_categories_path, success: t(:admin_destroy_category_success_message) }
         format.json { head :no_content }
       end
     else
-      flash[:fail] = "The article could not be deleted"
-      redirect_to admin_categories_path
+      redirect_to admin_categories_path, danger: t(:admin_destroy_category_fail_message)
     end
   end
 

@@ -1,17 +1,26 @@
 en:
+  fail_access_page: "You don't have access to this page"
+  cnil_success_message: "Thanks for your trust"
+  admin_create_article_sucess_message: "The article was successfully created"
+  admin_create_article_fail_message: "The article could not be created"
+  admin_update_article_sucess_message: "The article was successfully updated"
+  admin_update_article_fail_message: "The article could not be updated"
+  admin_publish_article_sucess_message: "The article was successfully published"
+  admin_publish_article_fail_message: "The article could not be published"
+  admin_destroy_article_sucess_message: "The article was successfully destroyed"
+  admin_destroy_article_fail_message: "The article could not be destroyed"
+  admin_create_category_sucess_message: "The category was successfully created"
+  admin_create_category_fail_message: "The category could not be created"
+  admin_update_category_sucess_message: "The category was successfully updated"
+  admin_update_category_fail_message: "The category could not be updated"
+  admin_destroy_category_success_message: "The category was successfully destroyed"
+  admin_destroy_category_fail_message: "The category could not be destroyed"
   hello: "Hello world"
   welcome:
     index:
       h1_welcome: "Welcome"
       h2_welcome: "To the Figaro blog"
       see_blog_link: "See the blog"
-  layouts:
-    application:
-      sign_in_link: "Sign in"
-      sign_out_link: "Log out"
-      acceptance_cookie: "Do you accept cookies?"
-      yes_cookie: "Yes"
-      no_cookie: "No"
   articles:
     blog:
       title_articles: "All articles"
@@ -32,3 +41,109 @@ en:
       confirm_destroy_comment: "Are you sure?"
     form_new:
       submit_new_comment: "Create a comment"
+  users:
+    registrations:
+      new:
+        devise_h2_sign_up: "Sign up"
+        devise_sign_up_submit: "Sign up"
+    unlocks:
+      new:
+        devise_resend_unlock_instructions: "Resend the unlock instructions"
+  admin:
+    articles:
+      index:
+        admin_th_title: "Title"
+        admin_th_text: "Text"
+        admin_th_slug: "Slug"
+        admin_th_category: "Category"
+        admin_edit_article_link: "Edit"
+        admin_destroy_article_link: "Destroy"
+        admin_destroy_confirm_articles: "Are you sure?"
+        admin_publish_article_link: "Publish this article"
+        admin_add_article_link: "Add a new article"
+      form:
+        admin_simple_form_create_article_submit: "Create article"
+        admin_simple_form_update_article_submit: "Update article"
+      new:
+        admin_h1_new_article: "New article"
+      edit:
+        admin_h1_edit_article: "Editing article"
+      showAdmin:
+        show_admin_h2_comment: "Comments"
+    categories:
+      index:
+        admin_th_title: "Title"
+        admin_edit_category_link: "Edit"
+        admin_destroy_category_link: "Destroy"
+        admin_destroy_confirm_categories: "Are you sure?"
+        admin_add_category_link: "Add a new category"
+      form:
+        admin_simple_form_create_category_submit: "Create category"
+        admin_simple_form_update_category_submit: "Update category"
+      new:
+        admin_h1_new_category: "New category"
+      edit:
+        admin_h1_edit_category: "Editing category"
+  layouts:
+    application:
+      devise_sign_in_link: "Sign in"
+      devise_sign_out_link: "Log out"
+      acceptance_cookie: "Do you accept cookies?"
+      yes_cookie: "Yes"
+      no_cookie: "No"
+    admin:
+      admin_no_title: "No title"
+      admin_menu_articles_list: "Articles list"
+      admin_menu_categories_list: "Categories list"
+      devise_admin_logout: "Log out"
+  activerecord:
+    models:
+      admin: "Admin"
+      article: "Article"
+      category: "Catégory"
+      comment: "Comment"
+      contact: "Contact"
+      user: "User"
+    attributes:
+      user:
+        email: "Email"
+        pseudo: "Pseudo"
+        password: "Password"
+      article:
+        title: "Title"
+        text: "Content"
+        image: "Picture"
+      category:
+        title: "Title"
+      comment:
+        commenter: "Author"
+        body: "Content"
+    errors:
+      models:
+        article:
+          attributes:
+            title:
+              blank: "YOu have to insert a title"
+              taken: "An article with the same title exists yey. Choose an other title please"
+              too_short: "%{count} characters is the minimum allowed"
+              too_long: "%{count} characters is the maximum allowed"
+            slug:
+              taken: "An article with the same slug exists yet. Choose an other please"
+            text:
+              blank: "You have to insert a content"
+              too_short: "%{count} characters is the maximum allowed"
+            image:
+              blank: "You have to insert a picture"
+        category:
+          attributes:
+            title:
+              blank: "You have to insert a title"
+              too_short: "%{count} characters is the maximum allowed"
+              too_long: "%{count} characters is the minimum allowed"
+              taken: "This category exists yet"
+        comment:
+          attributes:
+            commenter:
+              blank: "You have to insert an author"
+            body:
+              blank: "You have to insert a content"

@@ -3,5 +3,5 @@ class Category < ApplicationRecord
 
   ###########################################
 
-  validates :title, presence: true, length: { maximum: 20 }
+  validates :title, presence: true, length: { in: 4..20 }, uniqueness: true
 end

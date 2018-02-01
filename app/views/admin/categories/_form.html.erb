@@ -1,11 +1,9 @@
 <%= simple_form_for([:admin, @category]) do |f| %>
-  <%= f.error_notification %>
-
   <div class="form-inputs">
     <%= f.input :title %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, value: "#{f.object.new_record? ? t('.admin_simple_form_create_category_submit') : t('.admin_simple_form_update_category_submit')}" %>
   </div>
 <% end %>

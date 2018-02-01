@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   add_flash_types :danger, :success
 
-  I18n.locale = :fr
+  I18n.locale = :en
 
   def cnil
     if params[:data] == "oui"
@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
           expires: 1.month.from_now
       }
 
-      flash.now[:success] = "Merci pour votre confiance"
+      flash.now[:success] = t(:cnil_success_message)
     elsif params[:data] == "non"
       redirect_to "https://www.cnil.fr/fr/cookies-traceurs-que-dit-la-loi"
     end

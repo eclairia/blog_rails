@@ -11,7 +11,7 @@
         <div class="jumbotron">
           <p class="text-center lead"><%= article.title %><p>
             <% if article.image? %>
-              <p class="text-center"><img src="<%= article.image %>"></p>
+              <p class="text-center"><img src="<%= article.image %>", title="<%= article.title %>" alt="<%= article.title %>"></p>
             <% end %>
           <p class="text-center lead"><%= article.text[0, 100] %></p>
           <p class="text-center lead"><%= t('.posted_at') %> <%= article.created_at %></p>

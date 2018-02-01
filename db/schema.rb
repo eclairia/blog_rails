@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180107185050) do
+ActiveRecord::Schema.define(version: 20180201174136) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20180107185050) do
     t.string "image"
     t.integer "admin_id"
     t.string "slug"
+    t.string "language"
     t.index ["category_id"], name: "index_articles_on_category_id"
   end
 

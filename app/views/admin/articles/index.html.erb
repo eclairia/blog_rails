@@ -3,6 +3,7 @@
 <table class="table">
   <thead>
   <tr>
+    <th><%= t('.admin_th_language') %></th>
     <th><%= t('.admin_th_title') %></th>
     <th><%= t('.admin_th_text') %></th>
     <th><%= t('.admin_th_slug') %></th>
@@ -14,6 +15,7 @@
   <tbody>
   <% @articles.each do |article| %>
     <tr>
+      <td><%= article.language %></td>
       <td><%= link_to admin_article_showAdmin_path(article) do %>
         <%= article.title %>
       <% end %></td>

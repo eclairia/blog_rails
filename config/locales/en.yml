@@ -52,6 +52,7 @@ en:
   admin:
     articles:
       index:
+        admin_th_language: "Language"
         admin_th_title: "Title"
         admin_th_text: "Text"
         admin_th_slug: "Slug"

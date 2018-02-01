@@ -53,7 +53,11 @@ gem 'mini_magick'
 # Use devise gem for user authentification
 gem 'devise'
 
+# Use cookies_eu gem for cnil headband
 gem 'cookies_eu'
+
+# Use http_accept_language gem for get language broswer
+gem 'http_accept_language'
 
 gem 'rubocop'
 

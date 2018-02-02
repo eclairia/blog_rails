@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include HttpAcceptLanguage::AutoLocale
   protect_from_forgery with: :exception, prepend: true
 
   before_action :configure_devise_parameters, if: :devise_controller?

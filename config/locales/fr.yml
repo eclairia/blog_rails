@@ -59,6 +59,7 @@ fr:
   admin:
     articles:
       index:
+        admin_th_language: "Langue"
         admin_th_title: "Titre"
         admin_th_text: "Texte"
         admin_th_slug: "Slug"

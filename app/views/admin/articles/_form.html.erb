@@ -1,5 +1,6 @@
 <%= simple_form_for [:admin, @article] do |f| %>
     <%= f.hidden_field :admin_id, :value => current_admin.id %>
+    <%= f.input :language, as: :select, collection: { :français => :fr, :anglais => :en }, include_blank: false %>
     <%= f.input :title %>
     <%= f.input :text %>
     <%= f.hidden_field :slug %>

@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="698dad75-5b1b-4501-be03-1422d046fd10" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/articles_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/articles_controller.rb" />
-      <change beforePath="$PROJECT_DIR$/app/views/articles/blog.html.erb" afterPath="$PROJECT_DIR$/app/views/articles/blog.html.erb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +16,8 @@
       <file leaf-file-name="articles_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/articles_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="315">
+              <caret line="21" column="41" lean-forward="false" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -368,12 +366,12 @@
       <workItem from="1517323303866" duration="5833000" />
       <workItem from="1517330903337" duration="6745000" />
       <workItem from="1517396862159" duration="8361000" />
-      <workItem from="1517472621397" duration="20434000" />
+      <workItem from="1517472621397" duration="20724000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155405000" />
+    <option name="totallyTimeSpent" value="155695000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -808,8 +806,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/articles_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="315">
+          <caret line="21" column="41" lean-forward="false" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
           <folding />
         </state>
       </provider>

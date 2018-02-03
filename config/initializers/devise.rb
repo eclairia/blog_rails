@@ -3,24 +3,24 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-  # The secret key used by Devise. Devise uses this key to generate
-  # random tokens. Changing this key will render invalid all existing
+  # The secret key used bdy Devise. Devise uses this key to generate
+  # random tokens. Changing this key will render invali all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '9ca8fd269d1919dbedd06767b3f33f7d67a573289fb2cb42e71a14ed629fad7e920a207f61a39b31b813507057d20921741b23f1db7c722f598d75d75a287d1b'
+  config.secret_key = '9ca8fd269d1919dbedd06767b3f33f7d67a573289fb2cb42e71a14ed629fad7e920a207f61a39b31b813507057d20921741b23f1db7c722f598d75d75a287d1b'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'figaroblog@gmail.com'
 
   # Configure the class responsible to send e-mails.
-  # config.mailer = 'Devise::Mailer'
+  config.mailer = 'Devise::Mailer'
 
   # Configure the parent class responsible to send e-mails.
-  # config.parent_mailer = 'ActionMailer::Base'
+  config.parent_mailer = 'ActionMailer::Base'
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and

@@ -4,7 +4,7 @@ ActionMailer::Base.smtp_settings = {
   port:                 587,
   domain:               'https://fierce-sierra-61774.herokuapp.com/',
   user_name:            ENV["adrien.jourdier@eemi.com"],
-  password:             ENV["Arrokqbk1"],
+  password:             ENV["arrokqbk"],
   authentication:       'plain',
   enable_starttls_auto: true
 }

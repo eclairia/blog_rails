@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   # Espace d'administration
 
   devise_for :admin, controllers: {
-      :registrations => 'admin/registrations'
+      sessions: 'admin/sessions'
   }
 
   namespace :admin do

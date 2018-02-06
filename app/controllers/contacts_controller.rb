@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
     respond_to do |format|
       if @contact.save
         ContactMailer.contact(@contact).deliver_later
-        format.html { redirect_to contacts_path, success: t(:admin_delivery_mail_contact_sucess_message) }
+        format.html { redirect_to blog_path, success: t(:admin_delivery_mail_contact_sucess_message) }
       else
         format.html { render :new, danger: t(:admin_delivery_mail_contact_fail_message) }
         format.json { render json: @contact.errors, status: :unprocessable_entity }

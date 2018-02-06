@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       sessions: 'users/sessions'
   }
 
-  resources :contacts
+  resources :contacts, only: [:new, :create]
 
   resources :articles, only: [:blog, :show] do
     resources :comments
@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     get 'articles/publish/:id', to: 'articles#publish', as: 'publish_article'
 
     resources :categories
+    resources :contacts, except: [:new, :create]
   end
 
   ###########################################

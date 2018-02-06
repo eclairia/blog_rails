@@ -19,6 +19,15 @@ fr:
   admin_destroy_category_success_message: "La catégorie a été supprimée avec succés"
   admin_destroy_category_fail_message: "La catégorie n'a pas pu être supprimée"
 
+  admin_contact_title_page: "Page contact"
+  admin_contact_descr_page: "Liste des contacts"
+  admin_delivery_mail_contact_sucess_message: "L'email a été envoyé avec succés"
+  admin_delivery_mail_contact_fail_message: "L'email n'a pas pu être envoyé"
+  admin_update_contact_sucess_message: "Le contact a été modifié avec succés"
+  admin_update_contact_fail_message: "Le contact n'a pas pu être modifié"
+  admin_destroy_contact_sucess_message: "Le contact a été supprimé avec succés"
+  admin_destroy_contact_fail_message: "Le contact n'a pas pu être supprimé"
+
   cookies_eu:
     cookies_text: "Les cookies assurent le bon fonctionnement de nos services. En utilisant ces derniers, vous acceptez l'utilisation des cookies."
     learn_more: "En savoir plus"
@@ -56,6 +65,11 @@ fr:
     unlocks:
       new:
         devise_resend_unlock_instructions: "Renvoyer les instructions de dévérouillage"
+  contacts:
+    form:
+      admin_simple_form_create_contact_submit: "Créer le contact"
+    new:
+      admin_h1_new_contact: "Créer un contact"
   admin:
     articles:
       index:
@@ -92,6 +106,18 @@ fr:
         admin_h1_new_category: "Créer une catégorie"
       edit:
         admin_h1_edit_category: "Modifier la categorie"
+    contacts:
+      index:
+        admin_th_name: "Nom"
+        admin_th_email: "Email"
+        admin_th_message: "Message"
+        admin_edit_contact_link: "Modifier"
+        admin_destroy_contact_link: "Supprimer"
+        admin_destroy_confirm_contacts: "Etes vous sûr?"
+      form:
+        simple_form_edit_submit: "Modifier le contact"
+      edit:
+        admin_h1_edit_contact: "Editer le contact"
   layouts:
     application:
       devise_sign_in_link: "Se connecter"
@@ -103,6 +129,7 @@ fr:
       admin_no_title: "Pas de titre"
       admin_menu_articles_list: "Liste des articles"
       admin_menu_categories_list: "Liste des catégories"
+      admin_menu_contacts_list: "Liste des contacts"
       devise_admin_logout: "Se déconnecter"
   activerecord:
     models:

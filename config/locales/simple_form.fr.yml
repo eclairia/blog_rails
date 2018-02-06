@@ -20,5 +20,9 @@ fr:
         image: "Image"
       categories:
         title: "Titre"
+      contacts:
+        name: "Nom"
+        email: "Email"
+        message: "Message"
 
 

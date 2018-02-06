@@ -9,12 +9,23 @@ en:
   admin_publish_article_fail_message: "The article could not be published"
   admin_destroy_article_sucess_message: "The article was successfully destroyed"
   admin_destroy_article_fail_message: "The article could not be destroyed"
+
   admin_create_category_sucess_message: "The category was successfully created"
   admin_create_category_fail_message: "The category could not be created"
   admin_update_category_sucess_message: "The category was successfully updated"
   admin_update_category_fail_message: "The category could not be updated"
   admin_destroy_category_success_message: "The category was successfully destroyed"
   admin_destroy_category_fail_message: "The category could not be destroyed"
+
+  admin_contact_title_page: "Contact page"
+  admin_contact_descr_page: "Contacts list"
+  admin_delivery_mail_contact_sucess_message: "The mail was successfully delivered"
+  admin_delivery_mail_contact_fail_message: "The mail could not be delivered"
+  admin_update_contact_sucess_message: "The contact was successfully updated"
+  admin_update_contact_fail_message: "The contact could not be updated"
+  admin_destroy_contact_sucess_message: "The contact was successfully destroyed"
+  admin_destroy_contact_fail_message: "The contact could not be destroyed"
+
   hello: "Hello world"
   welcome:
     index:
@@ -49,6 +60,11 @@ en:
     unlocks:
       new:
         devise_resend_unlock_instructions: "Resend the unlock instructions"
+  contacts:
+    form:
+      admin_simple_form_create_contact_submit: "Create the contact"
+    new:
+      admin_h1_new_contact: "Create a contact"
   admin:
     articles:
       index:
@@ -85,6 +101,18 @@ en:
         admin_h1_new_category: "New category"
       edit:
         admin_h1_edit_category: "Editing category"
+    contacts:
+      index:
+        admin_th_name: "Name"
+        admin_th_email: "Email"
+        admin_th_message: "Message"
+        admin_edit_contact_link: "Update"
+        admin_destroy_contact_link: "Destroy"
+        admin_destroy_confirm_contacts: "Are you sure?"
+      form:
+        simple_form_edit_submit: "Update the contact"
+      edit:
+        admin_h1_edit_contact: "Editing contact"
   layouts:
     application:
       devise_sign_in_link: "Sign in"
@@ -96,6 +124,7 @@ en:
       admin_no_title: "No title"
       admin_menu_articles_list: "Articles list"
       admin_menu_categories_list: "Categories list"
+      admin_menu_contacts_list: "Contacts list"
       devise_admin_logout: "Log out"
   activerecord:
     models:

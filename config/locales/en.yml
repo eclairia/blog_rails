@@ -60,6 +60,10 @@ en:
     unlocks:
       new:
         devise_resend_unlock_instructions: "Resend the unlock instructions"
+    sessions:
+      new:
+        devise_h2_login: "Log in"
+        devise_log_in_submit: "Log in"
   contacts:
     form:
       admin_simple_form_create_contact_submit: "Create the contact"

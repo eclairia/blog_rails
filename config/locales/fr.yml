@@ -65,6 +65,10 @@ fr:
     unlocks:
       new:
         devise_resend_unlock_instructions: "Renvoyer les instructions de dévérouillage"
+    sessions:
+      new:
+        devise_h2_login: "Se connecter"
+        devise_log_in_submit: "Se connecter"
   contacts:
     form:
       admin_simple_form_create_contact_submit: "Créer le contact"

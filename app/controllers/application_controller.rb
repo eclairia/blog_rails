@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  include HttpAcceptLanguage::AutoLocale
+  #include HttpAcceptLanguage::AutoLocale
   protect_from_forgery with: :exception, prepend: true
 
   before_action :configure_devise_parameters, if: :devise_controller?
@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   add_flash_types :danger, :success
 
-  I18n.locale = :en
+  I18n.locale = :fr
 
   def cnil
     if params[:data] == "oui"

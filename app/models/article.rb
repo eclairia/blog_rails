@@ -18,6 +18,7 @@ class Article < ApplicationRecord
 
 	scope :published, -> (online) { where(online: online) }
   scope :language, -> (language) { where(language: language) }
+  #scope :category, -> (category) { where category: category }
 
   mount_uploader :image, ImageUploader
 

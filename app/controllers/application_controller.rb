@@ -7,8 +7,6 @@ class ApplicationController < ActionController::Base
 
   add_flash_types :danger, :success
 
-  I18n.locale = :fr
-
   def cnil
     if params[:data] == "oui"
       cookies[:cnil] = {

@@ -45,12 +45,6 @@
           <%= render 'cookies_eu/consent_banner', link: "https://www.cnil.fr/fr/cookies-traceurs-que-dit-la-loi", target: "_blank" %>
         <% end %>
 
-        <% if !cookies[:cnil]  %>
-          <p><%= t('.acceptance_cookie') %></p>
-          <%= link_to t('.yes_cookie'), :data => "oui", method: :get %>
-          <%= link_to t('.no_cookie'), :data => "non", method: :get %>
-        <% end %>
-
         <% flash.each do |name, msg| -%>
           <div class="alert alert-<%= name %>"><%= msg %></div>
         <% end %>

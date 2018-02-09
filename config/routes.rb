@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'blog', to: 'articles#blog'
   get '/about', to: 'static#index'
+  get '/lang/:id', to: 'application#changelang', as: 'change_lang'
 
   devise_for :users, controllers: {
       sessions: 'users/sessions'

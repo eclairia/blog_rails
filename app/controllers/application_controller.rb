@@ -4,10 +4,31 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_devise_parameters, if: :devise_controller?
   before_action :cnil
+  before_action :lang
 
   add_flash_types :danger, :success
 
-  I18n.locale = :en
+  # if !cookies[:lang].blank?
+  #   I18n.locale = :cookies[:langue]
+  # else
+  #   I18n.locale = :fr
+  # end
+
+  def lang
+    puts 'test cookies'
+    puts cookies[:lang]
+    if cookies[:lang].blank?
+      cookies[:lang] = {
+          value: 'fr',
+          expires: 1.month.from_now
+      }
+    else
+      cookies[:lang] = {
+          value: 'en',
+          expires: 1.month.from_now
+      }
+    end
+  end
 
   def cnil
     if params[:data] == "oui"

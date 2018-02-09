@@ -1,0 +1,6 @@
+<%= simple_form_for [:admin, contact] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :message %>
+  <%= f.button :submit, value: t('.simple_form_edit_submit') %>
+<% end %>

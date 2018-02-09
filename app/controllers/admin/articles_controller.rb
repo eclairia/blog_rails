@@ -14,6 +14,7 @@ class Admin::ArticlesController < AdminController
 
   # GET /article/new
   def new
+    @page_title = "Ajouter un article"
     @article = Article.new
     render layout: "admin"
   end
@@ -32,6 +33,7 @@ class Admin::ArticlesController < AdminController
 
   # GET /article/1/edit
   def edit
+    @page_title = "Modifier un article"
     render layout: "admin"
   end
 

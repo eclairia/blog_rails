@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  include HttpAcceptLanguage::AutoLocale
+  #include HttpAcceptLanguage::AutoLocale
   protect_from_forgery with: :exception, prepend: true
 
   before_action :configure_devise_parameters, if: :devise_controller?
@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   add_flash_types :danger, :success
 
-  I18n.locale = :en
+  I18n.locale = :fr
 
   def cnil
     if params[:data] == "oui"
@@ -25,4 +25,16 @@ class ApplicationController < ActionController::Base
   def configure_devise_parameters
     devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:pseudo, :email, :password, :password_confirmation) }
   end
+
+  private
+
+    def after_sign_out_path_for(resource_or_scope)
+      if resource_or_scope == :admin
+        new_admin_session_path
+      elsif resource_or_scope == :user
+        new_admin_session_path
+      else
+        root_path
+      end
+    end
 end

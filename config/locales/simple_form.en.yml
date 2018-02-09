@@ -20,3 +20,7 @@ en:
         image: "Picture"
       categories:
         title: "Title"
+      contacts:
+        name: "Name"
+        email: "Email"
+        message: "Message"

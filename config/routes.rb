@@ -8,10 +8,11 @@ Rails.application.routes.draw do
   get '/about', to: 'static#index'
 
   devise_for :users, controllers: {
-      sessions: 'users/sessions'
+      sessions: 'users/sessions',
+      omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  resources :contacts
+  resources :contacts, only: [:new, :create]
 
   resources :articles, only: [:blog, :show] do
     resources :comments
@@ -34,6 +35,7 @@ Rails.application.routes.draw do
     get 'articles/publish/:id', to: 'articles#publish', as: 'publish_article'
 
     resources :categories
+    resources :contacts, except: [:new, :create]
   end
 
   ###########################################

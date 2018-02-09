@@ -1,6 +1,16 @@
 en:
   fail_access_page: "You don't have access to this page"
+
   cnil_success_message: "Thanks for your trust"
+
+  welcome_on_figaroblog_title: "Welcome to the Figaro Blog"
+  welcome_on_figaroblog_descr: "The Figaro Blog regroups all the Figaro articles"
+
+  lefigaroblog_title: "The Figaro Blog"
+  front_show_title: "Show an article"
+
+  contact_us_title: "Contact us"
+
   admin_create_article_sucess_message: "The article was successfully created"
   admin_create_article_fail_message: "The article could not be created"
   admin_update_article_sucess_message: "The article was successfully updated"

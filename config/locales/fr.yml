@@ -3,6 +3,14 @@ fr:
 
   cnil_success_message: "Merci pour votre confiance!"
 
+  welcome_on_figaroblog_title: "Bienvenue sur le Figaro Blog"
+  welcome_on_figaroblog_descr: "Le Figaro Blog regroupe tous les articles du Figaro"
+
+  lefigaroblog_title: "Le Figaro Blog"
+  front_show_title: "Affichage d'un article"
+
+  contact_us_title: "Nous contacter"
+
   admin_create_article_sucess_message: "L'article a été crée avec succés"
   admin_create_article_fail_message: "L'article n'a pas pu être créé"
   admin_update_article_sucess_message: "L'article a été modifié avec succés"

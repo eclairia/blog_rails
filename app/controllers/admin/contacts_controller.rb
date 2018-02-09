@@ -3,6 +3,7 @@ class Admin::ContactsController < AdminController
   before_action :set_contact_paginate, only: [:index]
 
   def index
+    @page_title = "Tous les contacts"
     @page_title = t(:admin_contact_title_page)
     @meta_descr = t(:admin_contact_descr_page)
     @contacts = Contact.all.paginate(page: params[:page], per_page: 10)
@@ -10,9 +11,11 @@ class Admin::ContactsController < AdminController
   end
 
   def show
+    @page_title = "Page d'une catégorie"
   end
 
   def edit
+    @page_title = "Modifier une catégorie"
     render layout: "admin"
   end
 

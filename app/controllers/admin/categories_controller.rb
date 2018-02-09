@@ -4,18 +4,21 @@ class Admin::CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
+    @page_title = "Toutes les catégories"
     @categories = Category.all
     render layout: "admin"
   end
 
   # GET /categories/new
   def new
+    @page_title = "Ajouter une catégorie"
     @category = Category.new
     render layout: "admin"
   end
 
   # GET /categories/1/edit
   def edit
+    @page_title = "Modifier une catégorie"
     render layout: "admin"
   end
 

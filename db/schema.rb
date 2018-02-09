@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180201174136) do
+ActiveRecord::Schema.define(version: 20180207173829) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20180201174136) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "facebook_id"
     t.string "email", default: "", null: false
     t.string "pseudo", default: "", null: false
     t.string "encrypted_password", default: "", null: false

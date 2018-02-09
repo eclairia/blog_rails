@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show]
 
   def blog
-
+    @page_title = t(:lefigaroblog_title)
     @articles = Article.published(true).language('fr').alpha.paginate(page: params[:page], per_page: 5).search(params[:search])
     @categories = Category.all
   end
@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
   # GET /article/1
   # GET /article/1.json
   def show
+      @page_title = t(:front_show_title)
       @page_descr = @article.text.truncate(120)
   end
 
@@ -21,6 +22,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :text, :image, :slug, :language)
+      params.require(:article).permit(:title, :text, :image, :slug, :language, :category_id)
     end
 end

@@ -50,8 +50,10 @@ gem 'carrierwave', '~> 1.0'
 # Use mini_magick for the pictures resize
 gem 'mini_magick'
 
-# Use devise gem for user authentification
+# Use devise and omniauth gems for user authentification
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 # Use cookies_eu gem for cnil headband
 gem 'cookies_eu'

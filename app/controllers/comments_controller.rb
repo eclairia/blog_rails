@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-  #http_basic_authenticate_with name: "root", password: "root", only: [:index, :edit, :update, :destroy]
   before_action :set_article_admin, except: [:update]
   before_action :set_comment, except: [:create]
 
@@ -8,7 +7,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @article.comments.create(comment_params)
-    redirect_to article_path(@article)
+    redirect_to article_path(@article.slug)
   end
 
   def edit

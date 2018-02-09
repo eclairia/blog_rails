@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
   def new
+    @page_title = t(:contact_us_title)
     @contact = Contact.new
     render layout: "application"
   end

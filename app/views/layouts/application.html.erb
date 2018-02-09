@@ -30,6 +30,13 @@
             <li><%= link_to 'Contact', new_contact_path, class: 'nav-link' %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FR<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">FR</a></li>
+                <li><a href="#">EN</a></li>
+              </ul>
+            </li>
             <% if user_signed_in? %>
               <li><%= link_to t('.devise_sign_out_link'), destroy_user_session_path, method: :delete %></li>
             <% else %>
@@ -43,12 +50,6 @@
       <div class="form-group">
         <% if !cookies[:cookie_eu_consented] %>
           <%= render 'cookies_eu/consent_banner', link: "https://www.cnil.fr/fr/cookies-traceurs-que-dit-la-loi", target: "_blank" %>
-        <% end %>
-
-        <% if !cookies[:cnil]  %>
-          <p><%= t('.acceptance_cookie') %></p>
-          <%= link_to t('.yes_cookie'), :data => "oui", method: :get %>
-          <%= link_to t('.no_cookie'), :data => "non", method: :get %>
         <% end %>
 
         <% flash.each do |name, msg| -%>

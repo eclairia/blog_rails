@@ -22,5 +22,8 @@
 !/tmp/.keep
 
 /node_modules
+<<<<<<< HEAD
 
 .idea/*
+=======
+>>>>>>> 1c1a080048d3f2a704947c69b52d6ddaa9d9bbde

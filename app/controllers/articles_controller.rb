@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
   def blog
 
-    @articles = Article.published(true).language('fr').alpha.paginate(page: params[:page], per_page: 5).search(params[:search])
+    @articles = Article.published(true).language(cookies[:lang]).alpha.paginate(page: params[:page], per_page: 5).search(params[:search])
     @categories = Category.all
   end
 

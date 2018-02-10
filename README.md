@@ -35,7 +35,3 @@ Fonctionnalités présentes:
     
 On a essayé de mettre la connexion avec Facebook pour l'utilisateur avec le gem Omniauth mais cela ne fonctionne pas
 ON a aussi essayé d'utiliser le gem http_user_agent pour la catégorisation des articles par langues mais n'est pas fonctionnel. Nous sommes donc passé par une liste déroulante et des cookies.
-    
-Bonnes pratiques:
-------
-- Remplacer les before_action par des services

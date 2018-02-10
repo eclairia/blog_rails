@@ -1,3 +1,7 @@
+Binôme:
+- Antoine Le Berre
+- Adrien Jourdier
+
 https://fierce-sierra-61774.herokuapp.com/
 https://git.heroku.com/fierce-sierra-61774.git
 
@@ -9,6 +13,9 @@ Formulaire de connexion utilisateur:
 Formulaire de connexion administrateur:
 - Email: adrien@jourdier.fr
 - Mot de passe: 123456 
+
+url du trello:
+https://trello.com/b/kQB1BGuk/blograils
 
 Fonctionnalités présentes:
 ------
